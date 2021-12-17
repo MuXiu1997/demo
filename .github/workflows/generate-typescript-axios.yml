@@ -1,0 +1,16 @@
+name: Generate Typescript Axios
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-typescript-axios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: baizhi-edu/action-generate-typescript-axios-client@edf22f027284a11b195d366fde080dbe49c8a62e
+        with:
+          project-name: '@baizhi/demo'
+          registry: ${{ secrets.NPM_REGISTRY }}
+          username: ${{ secrets.NPM_USERNAME }}
+          password: ${{ secrets.NPM_PASSWORD }}
+          email: ${{ secrets.NPM_EMAIL }}
