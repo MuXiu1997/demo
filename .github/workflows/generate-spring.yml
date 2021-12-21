@@ -1,0 +1,16 @@
+name: Generate Spring
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-spring:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: baizhi-edu/action-generate-spring-server@90ed3f03142a52a41a30016ec4566d6b6c2c5753
+        with:
+          project-name: 'demo'
+          group-id: 'cn.baizhiedu.dev.demo'
+          registry: ${{ secrets.MAVEN_REGISTRY }}
+          username: ${{ secrets.MAVEN_USERNAME }}
+          password: ${{ secrets.MAVEN_PASSWORD }}
